@@ -1,0 +1,12 @@
+.dashboard-layout {
+  display: flex;
+}
+
+.dashboard-main {
+  margin-left: 220px; /* same width as sidebar */
+  padding: 2rem;
+  flex: 1;
+  background: #f5f6fa;
+  min-height: 100vh;
+  box-sizing: border-box;
+}

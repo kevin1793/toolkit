@@ -1,0 +1,156 @@
+/* Background */
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #6c63ff, #42a5f5);
+  font-family: "Inter", sans-serif;
+}
+
+/* Card */
+.signup-card {
+  background: #fff;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Titles */
+.signup-title {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.signup-subtitle {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Form */
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: left;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #444;
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+.form-group input {
+  width: -webkit-fill-available;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ddd;
+  font-size: 0.95rem;
+  transition: border 0.2s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #6c63ff;
+}
+
+/* Button */
+.signup-btn {
+  background: #6c63ff;
+  color: #fff;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.signup-btn:hover {
+  background: #574bff;
+}
+
+/* Footer */
+.signup-footer {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.signup-footer a {
+  color: #6c63ff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.signup-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Card */
+.login-card,
+.signup-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Radio Group */
+.radio-group {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.95rem;
+  color: #444;
+  cursor: pointer;
+}
+
+.radio-group input[type="radio"] {
+  accent-color: #6c63ff; /* modern browsers support this */
+  cursor: pointer;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .login-card,
+  .signup-card {
+    padding: 1.25rem;   /* reduce padding on small screens */
+    max-width: 90%;     /* let the card shrink closer to screen edges */
+  }
+
+  .form-group input {
+    padding: 0.65rem;   /* slightly smaller input padding */
+    font-size: 0.9rem;
+  }
+
+  .login-title,
+  .signup-title {
+    font-size: 1.5rem;
+  }
+
+  .login-subtitle,
+  .signup-subtitle {
+    font-size: 0.85rem;
+  }
+}
