@@ -68,6 +68,8 @@
 }
 
 .project-card {
+  cursor: pointer;
+
   background: #fff;
   padding: 1rem;
   border-radius: 1rem;
@@ -129,4 +131,117 @@
 .projects-list .project-card {
   display: flex;
   flex-direction: column;
+}
+
+
+/* ===== Project List Item ===== */
+.project-list-item {
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1rem 1.25rem;
+  background: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.project-list-item:hover {
+  background: #f9f9ff;
+  transform: translateY(-2px);
+}
+
+.project-list-item h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.project-list-item p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.project-list-item p:last-child {
+  font-weight: 500;
+  color: #333;
+}
+
+
+/* filter bar */
+.projects-filters {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.filter-btn {
+  padding: 0.4rem 0.9rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  background: #fff;
+  color: #444;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-btn:hover {
+  background: #f5f5f5;
+}
+
+.filter-btn.active {
+  background: #6c63ff;
+  border-color: #6c63ff;
+  color: #fff;
+}
+
+
+/* ===== Card Footer ===== */
+.card-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.card-footer button {
+  padding: 0.35rem 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  background: #fff;
+  color: #444;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.card-footer button:hover {
+  background: #f5f5f5;
+  border-color: #bbb;
+}
+
+.card-footer button:first-child {
+  color: #007bff;
+  border-color: #007bff;
+}
+
+.card-footer button:first-child:hover {
+  background: #007bff;
+  color: #fff;
+}
+
+.card-footer button:last-child {
+  color: #dc3545;
+  border-color: #dc3545;
+}
+
+.card-footer button:last-child:hover {
+  background: #dc3545;
+  color: #fff;
 }

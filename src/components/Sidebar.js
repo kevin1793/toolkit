@@ -13,6 +13,8 @@ export default function Sidebar({ role }) {
       { name: "Dashboard", path: "/dashboard" },
       { name: "Projects", path: "/projects" },
       { name: "Profile", path: "/profile" },
+      { name: "Contractors", path: "/contractors" }
+
     ],
     Contractor: [
       { name: "Dashboard", path: "/dashboard" },
@@ -22,7 +24,7 @@ export default function Sidebar({ role }) {
     Admin: [
       { name: "Dashboard", path: "/dashboard" },
       { name: "Users", path: "/users" },
-      { name: "Settings", path: "/settings" }
+      { name: "Settings", path: "/settings" },
     ]
   };
 

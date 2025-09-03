@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Ace Renovations",
+    "specialty": "Kitchen & Bathroom Remodeling",
+    "rating": 4.8,
+    "reviews": 34,
+    "location": "New York, NY",
+    "priceRange": "$50-$100/hr",
+    "image": "https://source.unsplash.com/400x250/?construction"
+  },
+  {
+    "id": 2,
+    "name": "TopBuild Contractors",
+    "specialty": "Home Additions & Extensions",
+    "rating": 4.5,
+    "reviews": 21,
+    "location": "Los Angeles, CA",
+    "priceRange": "$60-$120/hr",
+    "image": "https://source.unsplash.com/400x250/?builder"
+  },
+  {
+    "id": 3,
+    "name": "Quality Home Services",
+    "specialty": "Roofing & Exterior",
+    "rating": 4.7,
+    "reviews": 18,
+    "location": "Chicago, IL",
+    "priceRange": "$45-$90/hr",
+    "image": "https://source.unsplash.com/400x250/?roofing"
+  },
+  {
+    "id": 4,
+    "name": "Elite Interiors",
+    "specialty": "Interior Design & Renovation",
+    "rating": 4.9,
+    "reviews": 40,
+    "location": "Miami, FL",
+    "priceRange": "$70-$150/hr",
+    "image": "https://source.unsplash.com/400x250/?interior"
+  }
+]

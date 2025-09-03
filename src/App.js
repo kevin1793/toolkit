@@ -6,6 +6,8 @@ import SignupPage from './pages/SignupPage';
 import DashboardPage from './pages/DashboardPage';
 import ProtectedRoute from "./components/ProtectedRoute";
 import ProjectsPage from './pages/ProjectsPage';
+import ProjectDetailPage from './pages/ProjectDetails';
+import ContractorsPage from './pages/ContractorsPage';
 
 function NotFound() {
   return <h1>404 - Page Not Found</h1>;
@@ -20,6 +22,8 @@ function App() {
         <Route path="/notfound" element={<NotFound />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/contractors" element={<ContractorsPage />} />
+        <Route path="/projects/:projectId" element={<ProjectDetailPage />} />
         <Route path="/dashboard" element={<ProtectedRoute><DashboardPage /></ProtectedRoute>} />
       </Routes>
     </Router>

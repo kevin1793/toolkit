@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "title": "Kitchen Renovation",
+    "description": "Full remodel of kitchen with modern appliances, island, and lighting upgrades.",
+    "status": "In Progress",
+    "startDate": "2025-07-01",
+    "endDate": "2025-10-15",
+    "budget": 25000
+  },
+  {
+    "id": 2,
+    "title": "Backyard Landscaping",
+    "description": "Design and install a patio, fire pit, and garden area with new sod.",
+    "status": "Planning",
+    "startDate": "2025-09-10",
+    "endDate": "2025-11-30",
+    "budget": 12000
+  },
+  {
+    "id": 3,
+    "title": "Bathroom Upgrade",
+    "description": "Replace fixtures, add walk-in shower, and update flooring.",
+    "status": "Completed",
+    "startDate": "2025-05-01",
+    "endDate": "2025-06-20",
+    "budget": 8000
+  },
+  {
+    "id": 4,
+    "title": "Roof Replacement",
+    "description": "Replace shingles, add insulation, and improve drainage.",
+    "status": "In Progress",
+    "startDate": "2025-08-01",
+    "endDate": "2025-09-25",
+    "budget": 15000
+  },
+  {
+    "id": 5,
+    "title": "Home Office Build",
+    "description": "Convert spare bedroom into a modern home office with custom shelving.",
+    "status": "Planning",
+    "startDate": "2025-09-15",
+    "endDate": "2025-12-01",
+    "budget": 5000
+  }
+]
