@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import "../styles/SignupPage.css";
+import {createProfile,createUserWithEmailPassword} from "../services/firebaseUtil.js";
 
 export default function SignupPage() {
+  const [error, setError] = useState("");
+  
   const [formData, setFormData] = useState({
-    fname: "",
-    lname: "",
+    firstName: "",
+    lastName: "",
     email: "",
     userType: "Homeowner",
     password: "",
@@ -18,7 +21,44 @@ export default function SignupPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Signup attempt:", formData);
+
+    if(formData.password !== formData.confirmPassword){
+      setError("Passwords do not match");
+      return;
+    }
     // Add your signup logic here
+    createUserWithEmailPassword(formData.email, formData.password, formData)
+      .then((user) => {
+        console.log("User created:", user);
+        // Optionally, create a profile document
+        createProfile({
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          userType: formData.userType,
+          email: formData.email
+        }).then(() => {
+          setError("success");
+          // clear form data
+          setFormData({
+            firstName: "",
+            lastName: "",
+            email: "",
+            userType: "Homeowner",
+            password: "",
+            confirmPassword: ""
+          });
+        })
+      })
+      .catch((error) => {
+        console.error("Error creating user:", error);
+        if(error.message == 'Firebase: Error (auth/email-already-in-use).'){
+          setError("Email already in use");
+        }else if(error.message == 'Firebase: Password should be at least 6 characters (auth/weak-password).'){
+          setError("Password should be at least 6 characters");
+        }else{
+          setError("Signup failed");
+        }
+      });
   };
 
   return (
@@ -28,13 +68,15 @@ export default function SignupPage() {
         <p className="signup-subtitle">Sign up to get started</p>
 
         <form onSubmit={handleSubmit} className="signup-form">
+          {error && error !== "success" && <p className="form-error">{error}</p>}
+          {error === "success" && <p className="form-success">User created successfully! Please log in.</p>}
           <div className="form-group">
             {/* <label>First Name</label> */}
             <input
               type="text"
-              name="fname"
+              name="firstName"
               placeholder="First Name"
-              value={formData.fname}
+              value={formData.firstName}
               onChange={handleChange}
               required
             />
@@ -44,9 +86,9 @@ export default function SignupPage() {
             {/* <label>Last Name</label> */}
             <input
               type="text"
-              name="lname"
+              name="lastName"
               placeholder="Last Name"
-              value={formData.lname}
+              value={formData.lastName}
               onChange={handleChange}
               required
             />
