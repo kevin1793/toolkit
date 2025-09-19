@@ -7,11 +7,14 @@ export default function ProjectsList({
   viewMode,
   onEdit,
   onDelete,
+  refetchProjects
 }) {
   return viewMode === "grid" ? (
     <div className="projects-grid">
       {projects.map((project) => (
         <ProjectsCard
+          openDeleteModal={onDelete} // Pass the openDeleteModal function
+          refetchProjects={refetchProjects}
           key={project.id}
           project={project}
           onEdit={() => onEdit && onEdit(project.id)}
@@ -26,7 +29,8 @@ export default function ProjectsList({
           key={project.id}
           project={project}
           onEdit={() => onEdit && onEdit(project.id)}
-          onDelete={() => onDelete && onDelete(project.id)}
+          openDeleteModal={onDelete} // Pass the openDeleteModal function
+          refetchProjects={refetchProjects}
         />
       ))}
     </div>

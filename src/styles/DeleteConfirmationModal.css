@@ -1,0 +1,111 @@
+/* Modal Overlay (dark background) */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0; /* Initially hidden */
+  animation: fadeIn 0.3s ease-in-out forwards;
+}
+
+/* Fade-in animation for modal */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Modal Content Box */
+.modal-content {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-20px);
+  animation: slideUp 0.3s ease-in-out forwards;
+}
+
+/* Slide-up animation for modal */
+@keyframes slideUp {
+  0% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Modal Header */
+.modal-content h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Modal Body Text */
+.modal-content p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Buttons Container */
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Common Button Style */
+.modal-buttons button {
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  width: 48%; /* Space buttons evenly */
+}
+
+/* Cancel Button */
+.cancel-button {
+  background-color: #f2f2f2;
+  color: #333;
+  border: 2px solid #ddd;
+}
+
+.cancel-button:hover {
+  background-color: #e0e0e0;
+}
+
+/* Delete Button */
+.delete-button {
+  background-color: #ff5f5f;
+  color: #fff;
+  border: 2px solid #e63946;
+}
+
+.delete-button:hover {
+  background-color: #e63946;
+  transform: scale(1.05);
+}
+
+/* Button Focus State */
+.modal-buttons button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(81, 203, 238, 0.5);
+}

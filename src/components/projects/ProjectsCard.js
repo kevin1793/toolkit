@@ -1,13 +1,23 @@
-import React from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function ProjectsCard({ project, onEdit, onDelete }) {
+
+export default function ProjectsCard({ project, onEdit, onDelete, refetchProjects}) {
   const navigate = useNavigate();
 
   const handleCardClick = (e) => {
     // Prevent navigation if clicking Edit/Delete
     if (e.target.tagName !== "BUTTON") {
       navigate(`/projects/${project.id}`);
+    }
+  };
+
+  
+  const handleDeleteClick = (e) => {
+    console.log("Delete clicked for project id:", project.id);
+    e.stopPropagation(); // Prevent card click
+    if (onDelete) {
+      onDelete(project);
     }
   };
 
@@ -23,20 +33,21 @@ export default function ProjectsCard({ project, onEdit, onDelete }) {
 
       {/* Card Content */}
       <div className="project-card-content">
-        <h3>{project.title}</h3>
+        <h3>{project.title || project.name}</h3>
         <p>{project.description}</p>
-        <small>Status: {project.status}</small>
+        <small>Status: {project.status  || "New"}<br></br></small>
         <small>
-          {project.startDate} → {project.endDate}
+          Start: {project.startDate || 'TBD'} → End: {project.endDate || 'TBD'}<br></br>
         </small>
-        <small>Budget: ${project.budget.toLocaleString()}</small>
+        <small>Budget: ${project.budget ? project.budget.toLocaleString() : "N/A"}<br></br></small>
       </div>
 
       {/* Footer Actions */}
       <div className="card-footer">
         <button onClick={onEdit}>Edit</button>
-        <button onClick={onDelete}>Delete</button>
+        <button onClick={handleDeleteClick}>Delete</button>
       </div>
+      
     </div>
   );
 }
